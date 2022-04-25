@@ -1,25 +1,98 @@
+import java.util.Scanner;
 
-public class Grade {	//성적을 입력할때 담기는 것을 Grade라는 클래스에 field로 입력
-	String name;	//이름
-	int id;		//학번
-	double finalgoal;	//최종목표
-	double graSem;	//학년 학기
-	String grade;	//성적
+public class Grade {
+	protected StudentKind kind = StudentKind.University;
+	protected String name;
+	protected int id;
+	protected double finalgoal;
+	protected double graSem;
+	protected String grade;
 
 	public Grade() {
 
 	}
 
 	public Grade(String name, int id, double finalgoal, double graSem, String grade) {
-		/*인스턴스를 생성할떄 (String name, int id, double finalgoal, double graSem, String grade) 을 입력하면
-		생성하면서 바로 그 값들을 인스턴스의 name, id, finalgoal, graSem, grade에 저장*/
 		this.name = name;
 		this.id = id;
 		this.finalgoal = finalgoal;
 		this.graSem = graSem;
 		this.grade = grade;
 	}
-	public void printInfo() {	//입력한 것을 다시 출력해서 보여주는 method 생성
+	
+	//get,set 메소드 생성
+	public StudentKind getKind() {
+		return kind;
+	}
+	public void setKind(StudentKind kind) {
+		this.kind = kind;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
+	public double getFinalgoal() {
+		return finalgoal;
+	}
+	public void setFinalgoal(double finalgoal) {
+		this.finalgoal = finalgoal;
+	}
+
+	
+	public double getGraSem() {
+		return graSem;
+	}
+	public void setGraSem(double graSem) {
+		this.graSem = graSem;
+	}
+
+	
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	
+	public void printInfo() {
 		System.out.println("Name: "+ name + " Id: " + id +" FinalGoal: "+ finalgoal + " GradeAndSemester: " + graSem + " Grade: " + grade);
+	}
+	
+	//값을 입력받아서 setting(이름, 학번, 성적 등) 해주는 getUserInput 메소드 생성
+	public void getUserInput(Scanner input) {
+		System.out.print("Student ID(학번): ");
+		int id = input.nextInt();
+		this.setId(id);
+		
+		System.out.print("Student Name: ");
+		String name = input.next();
+		this.setName(name);
+		
+		System.out.print("Final Goal Grade(ex - 4.2): "); 
+		Double finalgoal = input.nextDouble();
+		this.setFinalgoal(finalgoal);
+		
+		System.out.print("Grade and Semester(ex- 1 Grade 2 Semester is 1.2): ");
+		Double graSem = input.nextDouble();
+		this.setGraSem(graSem);
+		
+		System.out.print("Grade(ex - ABACABF): ");
+		String grade1 = input.next();
+		this.setGrade(grade1);
 	}
 }
