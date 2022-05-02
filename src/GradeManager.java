@@ -12,32 +12,39 @@ public class GradeManager {
 	public void addGrade() {
 		int kind = 0;
 		Grade grade;
-		while (kind != 1 && kind != 2) {
+		while (kind != 1 && kind != 2 && kind != 3) {
 			System.out.println("Select Student Kind: ");
 			System.out.println("1. For University");
 			System.out.println("2. For High School");
-			System.out.print("Select num for Student Kind between 1 and 2: ");
+			System.out.println("3. For Middle School");
+			System.out.print("Select num for Student Kind between 1 ~ 3: ");
 			kind = input.nextInt();
 			if (kind == 1) {	//kind가 1이면 Grade Class 사용
-				grade = new Grade();
+				grade = new Grade(StudentKind.University);
 				grade.getUserInput(input);
 				grades.add(grade);
 				break;
 			}
 			else if (kind == 2) {	//kind가 2면 HighSchoolGrade Class 사용
-				grade = new HighSchoolGrade();
+				grade = new HighSchoolGrade(StudentKind.HighSchool);
+				grade.getUserInput(input);
+				grades.add(grade);
+				break;
+			}
+			else if (kind == 3) {
+				grade = new MiddleSchoolGrade(StudentKind.MiddleSchool);
 				grade.getUserInput(input);
 				grades.add(grade);
 				break;
 			}
 			else {
-				System.out.print("Select num for Student Kind between 1 and 2: ");
+				System.out.print("Select num for Student Kind between 1 ~ 3: ");
 			}
 		}
 	}
 
 	public void deleteGrade() {
-		System.out.print("Student ID(U - 학번, H - 반번호): ");
+		System.out.print("Student ID(U - 학번, H,M - 반번호): ");
 		int studentId = input.nextInt();
 		int index = -1;
 		//입력한 학번을 찾는 것을 구현함.
@@ -59,14 +66,14 @@ public class GradeManager {
 
 
 	public void editGrade() {
-		System.out.print("Student ID(U - 학번, H - 반번호): ");
+		System.out.print("Student ID(U - 학번, H - 반번호, M - Can't Edit -> Exit Please): ");
 		int studentId = input.nextInt();
 		for (int i =0; i<grades.size(); i++) {
 			Grade grade = grades.get(i);
 			if (grade.getId() == studentId) {
 				int num = -1;
 				while (num != 5) {
-					System.out.println("** Grade Info Endit Menu **");
+					System.out.println("** Grade Info Edit Menu **");
 					System.out.println("1. Edit Id(U - 학번, H - 반번호)");
 					System.out.println("2. Edit Name");
 					System.out.println("3. Edit Final Goal Grade");
