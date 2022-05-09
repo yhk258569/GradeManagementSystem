@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MiddleSchoolGrade extends Grade {
+public class MiddleSchoolGrade extends Grade implements GradeInput{
 	public MiddleSchoolGrade(StudentKind kind) {
 		super(kind);
 	}
