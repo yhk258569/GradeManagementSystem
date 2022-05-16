@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HighSchoolGrade extends Grade implements GradeInput{	//Grade를 부모클래스로 받는 자식클래스를 생성
+public class HighSchoolGrade extends Grade {	//Grade를 부모클래스로 받는 자식클래스를 생성
 
 	public HighSchoolGrade(StudentKind kind) {
 		super(kind);
@@ -10,46 +10,25 @@ public class HighSchoolGrade extends Grade implements GradeInput{	//Grade를 부모
 	public void getUserInput(Scanner input) {
 		//고등학생은 학번이 아닌 반번호를 입력받음
 		System.out.print("Class and Number(ex - 335 is Class 3, Number 35): ");
-		int id = input.nextInt();
-		this.setId(id);
+		ssetStudentID(input);
 
-		System.out.print("Student Name: ");
-		String name = input.next();
-		this.setName(name);
+		setStudentName(input);
 
 		//대학생과 다르게 고등학생은 목표 내신점수를 입력받음
 		System.out.print("Final Goal Grade(ex - 1.2): ");
-		Double finalgoal = input.nextDouble();
-		this.setFinalgoal(finalgoal);
+		ssetStudenFinalGoal(input);
 
 		System.out.print("Grade and Semester(ex- 1 Grade 2 Semester is 1.2): ");
-		Double graSem = input.nextDouble();
-		this.setGraSem(graSem);
+		ssetStudentGraSem(input);
 
 		//A - 수, B - 우, C - 미, D - 양, F - 가
 		System.out.print("Grade(ex - 수우미양가): ");
-		String grade1 = input.next();
-		this.setGrade(grade1);
+		ssetStudentGrade(input);
 	}
 
 	public void printInfo() {
-		String skind = "none";
-		switch(this.kind) {
-		case University:
-			skind = "Univ.";
-			break;
-		case HighSchool:
-			skind = "High.";
-			break;
-		case MiddleSchool:
-			skind = "Middle.";
-			break;
-			/*case ElementarySchool:
-			skind = "Elementary";
-			break; */
-		default:
-
-		}
+		String skind = getKindString();
 		System.out.println("Kind: " + skind + " Name: "+ name + " Id: " + id +" FinalGoal: "+ finalgoal + " GradeAndSemester: " + graSem + " Grade: " + grade);
 	}
+
 }
