@@ -1,11 +1,16 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class GradeManager {
+public class GradeManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5414083620850276034L;
 	//한 학생이 아닌 여러학생의 정보를 입력받기 위해서 ArrayList<> 사용
 	ArrayList<GradeInput> grades = new ArrayList<GradeInput>();	
-	Scanner input;
+	transient Scanner input;
 	GradeManager(Scanner input){
 		this.input = input;
 	}

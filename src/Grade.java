@@ -1,9 +1,14 @@
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.FormatException;
 
-public abstract class Grade implements GradeInput{
+public abstract class Grade implements GradeInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 238895548803606013L;
 	protected StudentKind kind = StudentKind.University;
 	protected String name;
 	protected int id;
