@@ -19,9 +19,9 @@ public class MenuManager {
 			gradeManager = new GradeManager(input);
 		}
 		
-		/*else {
+		else {
 			gradeManager.input = input;
-		}*/
+		}
 
 		selectMenu(input, gradeManager);
 		putObject(gradeManager, "grademanager.ser");
