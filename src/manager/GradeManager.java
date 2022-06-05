@@ -15,11 +15,11 @@ public class GradeManager implements Serializable{
 	GradeManager(Scanner input){
 		this.input = input;
 	}
-	
+
 	public void setScanner(Scanner input) {
 		this.input = input;
 	}
-	
+
 	public void addGrade() {
 		int kind = 0;
 		GradeInput gradeInput;
@@ -138,11 +138,11 @@ public class GradeManager implements Serializable{
 			grades.get(i).printInfo();
 		}
 	}
-	
+
 	public int size() {
 		return grades.size();
 	}
-	
+
 	public GradeInput get(int index) {
 		return (Grade) grades.get(index);
 	}

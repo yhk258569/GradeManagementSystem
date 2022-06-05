@@ -8,12 +8,12 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 public class GradeAdder extends JPanel{
-	
+
 	WindowFrame frame;
 
 	public GradeAdder(WindowFrame frame){
 		this.frame = frame;
-		
+
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 

@@ -11,12 +11,12 @@ import listener.ButtonAddListener;
 import listener.ButtonViewListener;
 
 public class MenuSelection extends JPanel{
-	
+
 	WindowFrame frame;
 
 	public MenuSelection(WindowFrame frame) {
 		this.frame = frame;
-		
+
 		this.setLayout(new BorderLayout());
 
 		JPanel panel1 = new JPanel();
@@ -28,7 +28,7 @@ public class MenuSelection extends JPanel{
 		JButton button3 = new JButton("Edit Grade");
 		JButton button4 = new JButton("View Grade");
 		JButton button5 = new JButton("Exit Program");
-		
+
 		button4.addActionListener(new ButtonViewListener(frame));
 		button1.addActionListener(new ButtonAddListener(frame));
 

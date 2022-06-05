@@ -20,7 +20,7 @@ public class MenuManager {
 		if (gradeManager == null) {
 			gradeManager = new GradeManager(input);
 		}
-		
+
 		else {
 			gradeManager.input = input;
 		}
@@ -84,14 +84,14 @@ public class MenuManager {
 
 	public static GradeManager getObject(String filename) {
 		GradeManager gradeManager = null;
-		
-		
+
+
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
-			
+
 			gradeManager = (GradeManager) in.readObject();
-			
+
 			in.close();
 			file.close();
 		} catch (FileNotFoundException e) {
@@ -103,14 +103,14 @@ public class MenuManager {
 		}
 		return gradeManager;
 	}
-	
+
 	public static void putObject(GradeManager gradeManager, String filename) {
 		try {
 			FileOutputStream file = new FileOutputStream(filename);
 			ObjectOutputStream out = new ObjectOutputStream(file);
-			
+
 			out.writeObject(gradeManager);
-			
+
 			out.close();
 			file.close();
 		} catch (FileNotFoundException e) {

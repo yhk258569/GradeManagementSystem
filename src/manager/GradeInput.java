@@ -7,17 +7,17 @@ public interface GradeInput {
 	public int getId();
 
 	public void setName(String name) throws FormatException;
-	
+
 	public String getName();
 
 	public void setId(int id);
-	
+
 	public double getFinalgoal();
 
 	public void setFinalgoal(double finalgoal);
 
 	public double getGraSem();
-	
+
 	public String getGrade();
 
 	public void setGrade(String grade);

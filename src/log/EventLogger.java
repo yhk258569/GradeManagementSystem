@@ -10,7 +10,7 @@ public class EventLogger {
 	FileHandler filehandler;
 	LogManager logmanager;
 	Logger logger;
-	
+
 	public EventLogger(String fileName) {
 		try {
 			logmanager = LogManager.getLogManager();
