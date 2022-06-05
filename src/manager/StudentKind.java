@@ -1,3 +1,4 @@
+package manager;
 
 public enum StudentKind {
 	University,

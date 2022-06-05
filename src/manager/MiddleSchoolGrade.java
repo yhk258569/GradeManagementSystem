@@ -1,3 +1,4 @@
+package manager;
 import java.util.Scanner;
 
 import exception.FormatException;

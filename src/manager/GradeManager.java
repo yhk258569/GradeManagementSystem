@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -14,7 +15,11 @@ public class GradeManager implements Serializable{
 	GradeManager(Scanner input){
 		this.input = input;
 	}
-
+	
+	public void setScanner(Scanner input) {
+		this.input = input;
+	}
+	
 	public void addGrade() {
 		int kind = 0;
 		GradeInput gradeInput;
@@ -68,7 +73,7 @@ public class GradeManager implements Serializable{
 	public int findIndex(int studentId) {
 		int index = -1;
 		//입력한 학번을 찾는 것을 구현함.
-		for (int i = 0; i < grades.size(); i ++) {
+		for (int i = 0; i < grades.size(); i++) {
 			if (grades.get(i).getId() == studentId) {
 				index = i;
 				break;
@@ -133,7 +138,14 @@ public class GradeManager implements Serializable{
 			grades.get(i).printInfo();
 		}
 	}
-
+	
+	public int size() {
+		return grades.size();
+	}
+	
+	public GradeInput get(int index) {
+		return (Grade) grades.get(index);
+	}
 
 	public void showEditMenu() {
 		System.out.println("** Grade Info Edit Menu **");

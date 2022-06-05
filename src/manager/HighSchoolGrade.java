@@ -1,3 +1,4 @@
+package manager;
 import java.util.Scanner;
 
 public class HighSchoolGrade extends Grade {	//Grade를 부모클래스로 받는 자식클래스를 생성
