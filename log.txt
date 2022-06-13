@@ -1,4 +1,0 @@
-6월 06, 2022 12:06:17 오전 log.EventLogger log
-정보: view a grade
-6월 06, 2022 12:06:55 오전 log.EventLogger log
-정보: delete a grade

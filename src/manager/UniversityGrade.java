@@ -8,7 +8,6 @@ public class UniversityGrade extends Grade {
 		super(kind);
 	}
 
-	//값을 입력받아서 setting(이름, 학번, 성적 등) 해주는 getUserInput 메소드 생성
 	public void getUserInput(Scanner input) {
 		System.out.print("Student ID(학번): ");
 		ssetStudentID(input);

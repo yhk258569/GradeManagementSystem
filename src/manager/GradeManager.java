@@ -9,7 +9,6 @@ public class GradeManager implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5414083620850276034L;
-	//한 학생이 아닌 여러학생의 정보를 입력받기 위해서 ArrayList<> 사용
 	ArrayList<GradeInput> grades = new ArrayList<GradeInput>();	
 	transient Scanner input;
 	GradeManager(Scanner input){
@@ -19,7 +18,21 @@ public class GradeManager implements Serializable{
 	public void setScanner(Scanner input) {
 		this.input = input;
 	}
-
+	
+	public void addGrade(String id, String name, 
+			String finalGoal, String gradeAndSemester, String grade) {
+		GradeInput gradeInput = new UniversityGrade(StudentKind.University);
+		gradeInput.getUserInput(input);
+		grades.add(gradeInput);
+	}
+	
+	public void addGrade(GradeInput gradeInput) {
+		grades.add(gradeInput);
+	}
+	
+	
+	
+	
 	public void addGrade() {
 		int kind = 0;
 		GradeInput gradeInput;
@@ -31,13 +44,13 @@ public class GradeManager implements Serializable{
 				System.out.println("3. For Middle School");
 				System.out.print("Select num for Student Kind between 1 ~ 3: ");
 				kind = input.nextInt();
-				if (kind == 1) {	//kind가 1이면 Grade Class 사용
+				if (kind == 1) {
 					gradeInput = new UniversityGrade(StudentKind.University);
 					gradeInput.getUserInput(input);
 					grades.add(gradeInput);
 					break;
 				}
-				else if (kind == 2) {	//kind가 2면 HighSchoolGrade Class 사용
+				else if (kind == 2) {
 					gradeInput = new HighSchoolGrade(StudentKind.HighSchool);
 					gradeInput.getUserInput(input);
 					grades.add(gradeInput);
@@ -72,7 +85,6 @@ public class GradeManager implements Serializable{
 
 	public int findIndex(int studentId) {
 		int index = -1;
-		//입력한 학번을 찾는 것을 구현함.
 		for (int i = 0; i < grades.size(); i++) {
 			if (grades.get(i).getId() == studentId) {
 				index = i;
@@ -84,7 +96,7 @@ public class GradeManager implements Serializable{
 
 	public int removefromGrades(int index, int studentId) {
 		if (index >= 0) {
-			grades.remove(index);	//삭제
+			grades.remove(index);
 			System.out.println("The Student(" + studentId + ") is deleted.");
 			return 1;
 		}
@@ -107,19 +119,15 @@ public class GradeManager implements Serializable{
 					num = input.nextInt();
 					switch(num) {
 					case 1:
-						//num이 1일때 Id를 입력받아 수정하는 코드
 						grade.setStudentID(input);
 						break;
 					case 2:
-						//num이 2일때 name을 입력받아 수정하는 코드
 						grade.setStudentName(input);
 						break;
 					case 3:
-						//num이 3일때 Final Goal을 입력받아 수정하는 코드
 						grade.setStudenFinalGoal(input);
 						break;
 					case 4:
-						//num이 4일때 Grade를 입력받아 수정하는 코드
 						grade.setStudentGrade(input);
 						break;
 					default:

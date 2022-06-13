@@ -1,15 +1,13 @@
 package manager;
 import java.util.Scanner;
 
-public class HighSchoolGrade extends Grade {	//Grade를 부모클래스로 받는 자식클래스를 생성
+public class HighSchoolGrade extends Grade {
 
 	public HighSchoolGrade(StudentKind kind) {
 		super(kind);
 	}
 
-	//메소드 오버라이딩(고등학생과 대학생은 조금 다르기 때문에)
 	public void getUserInput(Scanner input) {
-		//고등학생은 학번이 아닌 반번호를 입력받음
 		System.out.print("Class and Number(ex - 335 is Class 3, Number 35): ");
 		ssetStudentID(input);
 

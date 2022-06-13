@@ -70,7 +70,6 @@ public class MenuManager {
 		}
 	}
 
-	// if - else 문을 catch문으로 바꿈 + showMenu라는 메소드를 정의해서 사용
 
 	public static void showMenu() {
 		System.out.println("*** Grade Management System Menu ***");

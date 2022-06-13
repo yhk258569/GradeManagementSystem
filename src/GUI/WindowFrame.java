@@ -20,7 +20,7 @@ public class WindowFrame extends JFrame {
 
 		this.gradeManager = gradeManager;
 		menuselection = new MenuSelection(this);
-		gradeadder = new GradeAdder(this);
+		gradeadder = new GradeAdder(this, this.gradeManager);
 		gradeviewer = new GradeViewer(this, this.gradeManager);
 
 

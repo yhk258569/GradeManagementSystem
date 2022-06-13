@@ -7,12 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import listener.GradeAdderCancelListener;
+import listener.GradeAdderListener;
+import manager.GradeManager;
+
 public class GradeAdder extends JPanel{
 
 	WindowFrame frame;
+	
+	GradeManager gradeManager;
 
-	public GradeAdder(WindowFrame frame){
+	public GradeAdder(WindowFrame frame, GradeManager gradeManager){
 		this.frame = frame;
+		this.gradeManager = gradeManager;
 
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -46,9 +53,16 @@ public class GradeAdder extends JPanel{
 		labelGrade .setLabelFor(fieldGrade);
 		panel.add(labelGrade);
 		panel.add(fieldGrade);
-
-		panel.add(new JButton("Save"));
-		panel.add(new JButton("Cancel"));
+		
+		//save 버튼과 cancel 버튼을 만들어줌
+		JButton saveButton =new JButton("Save");
+		//save 버튼에 ActionListener 추가
+		saveButton.addActionListener(new GradeAdderListener(fieldID, fieldName, fieldFinalGoal, fieldGradeAndSemester, fieldGrade, gradeManager));
+		JButton cancelButton =new JButton("Cancel");
+		cancelButton.addActionListener(new GradeAdderCancelListener(frame));
+		
+		panel.add(saveButton);
+		panel.add(cancelButton);
 
 
 		SpringUtilities.makeCompactGrid(panel, 6, 2, 6, 6, 6, 6);
