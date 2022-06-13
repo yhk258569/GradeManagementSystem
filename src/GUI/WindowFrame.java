@@ -11,6 +11,8 @@ public class WindowFrame extends JFrame {
 	MenuSelection menuselection;
 	GradeAdder gradeadder;
 	GradeViewer gradeviewer;
+	GradeEdit gradeEdit;
+
 
 
 	public WindowFrame(GradeManager gradeManager) {
@@ -19,10 +21,10 @@ public class WindowFrame extends JFrame {
 		this.setTitle("MY FRAME");
 
 		this.gradeManager = gradeManager;
-		menuselection = new MenuSelection(this);
+		menuselection = new MenuSelection(this, this.gradeManager);
 		gradeadder = new GradeAdder(this, this.gradeManager);
 		gradeviewer = new GradeViewer(this, this.gradeManager);
-
+		gradeEdit = new GradeEdit(this, this.gradeManager);
 
 
 		this.add(menuselection);
@@ -60,6 +62,15 @@ public class WindowFrame extends JFrame {
 
 	public void setGradeviewer(GradeViewer gradeviewer) {
 		this.gradeviewer = gradeviewer;
+	}
+
+
+	public GradeEdit getGradeEdit() {
+		return gradeEdit;
+	}
+
+	public void setGradeEdit(GradeEdit gradeEdit) {
+		this.gradeEdit = gradeEdit;
 	}
 
 }

@@ -15,24 +15,32 @@ public class GradeManager implements Serializable{
 		this.input = input;
 	}
 
+	public void removeArray() {
+		int i = grades.size()-1;
+		while(i >= 0) {
+			grades.remove(i);
+			i--;
+		}
+	}
+
 	public void setScanner(Scanner input) {
 		this.input = input;
 	}
-	
+
 	public void addGrade(String id, String name, 
 			String finalGoal, String gradeAndSemester, String grade) {
 		GradeInput gradeInput = new UniversityGrade(StudentKind.University);
 		gradeInput.getUserInput(input);
 		grades.add(gradeInput);
 	}
-	
+
 	public void addGrade(GradeInput gradeInput) {
 		grades.add(gradeInput);
 	}
-	
-	
-	
-	
+
+
+
+
 	public void addGrade() {
 		int kind = 0;
 		GradeInput gradeInput;

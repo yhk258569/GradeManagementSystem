@@ -17,7 +17,7 @@ public interface GradeInput {
 	public void setFinalgoal(double finalgoal);
 
 	public double getGraSem();
-	
+
 	public void setGraSem(double graSem);
 
 	public String getGrade();

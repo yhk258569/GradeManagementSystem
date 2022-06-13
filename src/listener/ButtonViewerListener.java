@@ -23,20 +23,20 @@ public class ButtonViewerListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		JButton b = (JButton) e.getSource();
-//		GradeViewer viewer = frame.getGradeviewer();
-//		frame.setupPanel(viewer);
+		//		JButton b = (JButton) e.getSource();
+		//		GradeViewer viewer = frame.getGradeviewer();
+		//		frame.setupPanel(viewer);
 		GradeViewer gradeViewer = frame.getGradeviewer();
 		GradeManager gradeManager = getObject("grademanager.ser");
 		gradeViewer.setGradeManager(gradeManager);
-	
+
 		frame.getContentPane().removeAll();
 		frame.getContentPane().add(gradeViewer);
 		frame.revalidate();
 		frame.repaint();
-		
+
 	}
-	
+
 	public static GradeManager getObject(String filename) {
 		GradeManager gradeManager = null;
 

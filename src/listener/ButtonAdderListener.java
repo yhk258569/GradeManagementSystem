@@ -18,9 +18,9 @@ public class ButtonAdderListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		JButton b = (JButton) e.getSource();
-//		GradeAdder adder = frame.getGradeadder();
-//		frame.setupPanel(adder);
+		//		JButton b = (JButton) e.getSource();
+		//		GradeAdder adder = frame.getGradeadder();
+		//		frame.setupPanel(adder);
 		frame.getContentPane().removeAll();
 		frame.getContentPane().add(frame.getGradeadder());
 		frame.revalidate();
